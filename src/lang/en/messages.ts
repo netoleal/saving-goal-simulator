@@ -8,5 +8,9 @@ export default {
   montlyAmount: 'Reach goal by',
   resultText:
     'You’re planning {deposits, number} monthly deposits to reach your ${goal, number, ::sign-always compact-short currency/USD } goal by {targetDate, date, ::Myyyy}.',
-  confirm: 'Confirm'
+  confirm: 'Confirm',
+  month: '{value, date, ::MMMM}',
+  year: '{value, date, ::yyyy}',
+  next: 'Next',
+  previous: 'Previous'
 };

@@ -8,7 +8,8 @@
     "jsx": "react",
     "allowJs": true,
     "checkJs": false,
-    "baseUrl": "src"
+    "baseUrl": "src",
+    "esModuleInterop": true
   },
   "include": ["./src/**/*"]
 }

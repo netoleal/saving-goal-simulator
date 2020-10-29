@@ -19,6 +19,17 @@ describe('GenericField', () => {
         unmount();
       });
     });
+    describe('When pass label', () => {
+      it('should render label', () => {
+        const { unmount } = render(
+          <GenericField label="label">
+            <div>some text</div>
+          </GenericField>
+        );
+        expect(screen.getByText('label')).toBeInTheDocument();
+        unmount();
+      });
+    });
     describe('When pass extra components', () => {
       describe('When start is assigned', () => {
         let unmount: () => void;

@@ -1,15 +1,15 @@
 import * as React from 'react';
 import classnames from 'classnames';
 import './GenericField.scss';
+import { FieldComponentProps } from '../../../types/FieldsTypes';
 
 export type GenericFieldProps = {
   className?: string;
-  label?: string;
   extraComponents?: {
     start?: string | JSX.Element;
     end?: string | JSX.Element;
   };
-};
+} & FieldComponentProps;
 
 export const GenericField: React.FC<GenericFieldProps> = ({
   extraComponents,

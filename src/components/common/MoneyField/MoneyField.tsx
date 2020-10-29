@@ -1,10 +1,9 @@
 import * as React from 'react';
 import './MoneyField.scss';
 import { GenericField } from '../GenericField';
+import { FieldComponentProps } from '../../../types/FieldsTypes';
 
-export type MoneyFieldProps = {
-  label?: string;
-};
+export type MoneyFieldProps = FieldComponentProps;
 
 export const MoneyField: React.FC<MoneyFieldProps> = ({ label }) => {
   const currencyIndicator = <div className="currency">$</div>;

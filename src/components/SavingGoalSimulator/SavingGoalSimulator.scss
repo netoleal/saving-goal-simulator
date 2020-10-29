@@ -32,21 +32,13 @@
 
     .fieldsContainer {
       margin-top: size(4);
-      display: flex;
-      flex-direction: column;
-      align-content: stretch;
-      > *:first-child {
-        margin-bottom: size(2);
-      }
+      display: grid;
+      grid-template-columns: 100%;
+      gap: size(2);
 
       @include breakpoint(sm) {
         margin-top: size(5);
-        flex-direction: row;
-
-        > *:first-child {
-          margin-right: size(2);
-          margin-bottom: size(0);
-        }
+        grid-template-columns: 50% 50%;
       }
     }
   }
