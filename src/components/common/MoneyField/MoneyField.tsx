@@ -10,7 +10,6 @@ export type MoneyFieldProps = {
   onChange?: (value: number) => void;
 } & FieldComponentProps;
 
-// TODO: add tests
 export const MoneyField: React.FC<MoneyFieldProps> = ({
   label,
   startValue,

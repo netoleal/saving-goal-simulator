@@ -15,7 +15,10 @@ export const useSavingGoalCalculator = () => (
   totalAmount: number,
   targetDate: Date
 ): SavingGoalCalculatorResult => {
-  const deposits = countMonths(new Date(), targetDate);
-  const monthlyAmount = Math.ceil(totalAmount / deposits);
+  const deposits = Math.max(0, countMonths(new Date(), targetDate));
+  if (deposits === 0) {
+    return { deposits, monthlyAmount: 0 };
+  }
+  const monthlyAmount = Math.max(0, Math.ceil(totalAmount / deposits));
   return { deposits, monthlyAmount };
 };

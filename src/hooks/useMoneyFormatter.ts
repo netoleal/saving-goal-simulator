@@ -1,9 +1,10 @@
 import { useIntl } from 'react-intl';
 
-// TODO: add tests
 export function formatNumberToMoney(locale: string, number: number): string {
-  const validValue = isNaN(number) ? 0 : number;
-  const currency = new Intl.NumberFormat(locale).format(validValue);
+  if (isNaN(number) || !isFinite(number)) {
+    return '0';
+  }
+  const currency = new Intl.NumberFormat(locale).format(number);
   return currency;
 }
 
