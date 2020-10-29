@@ -1,0 +1,32 @@
+.SavingGoalSimulator {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  h2 {
+    color: var(--brand-color);
+    font-size: 24px;
+    font-style: normal;
+    font-weight: var(--fw-regular);
+    line-height: 32px;
+    letter-spacing: -0.20000000298023224px;
+    text-align: center;
+    span {
+      font-weight: var(--fw-bold);
+    }
+  }
+
+  h1 {
+    margin: size(0);
+  }
+
+  .contentCard {
+    display: flex;
+    flex-direction: column;
+
+    > img:first-child {
+      width: 37px;
+      height: 40px;
+    }
+  }
+}

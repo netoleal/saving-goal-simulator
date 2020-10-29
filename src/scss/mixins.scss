@@ -1,0 +1,7 @@
+@function size($multipliers...) {
+  $result: '';
+  @each $multiplier in $multipliers {
+    $result: $result + ' ' + ($multiplier * 8px);
+  }
+  @return unquote($result);
+}
