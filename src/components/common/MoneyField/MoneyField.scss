@@ -1,0 +1,21 @@
+@import '../../../scss/mixins.scss';
+
+.MoneyField {
+  .currency {
+    background: #f4f8fa;
+    color: #657786;
+    font-size: 1.35em;
+    line-height: 1em;
+  }
+
+  .input {
+    padding: size(2);
+    max-width: calc(80% - 24px);
+    margin-left: size(2);
+    border: none;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}

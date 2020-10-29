@@ -1,0 +1,14 @@
+@import '../../../scss/mixins.scss';
+
+.card {
+  padding: var(--card-padding);
+  background: var(--background-color-light);
+  border-radius: size(2);
+  box-shadow: 0px 2px 16px 0px rgba(226, 233, 238, 0.8);
+
+  @include breakpoint(sm) {
+    border: 1px solid #e1e8ed;
+    padding: size(5);
+    box-shadow: 0px 1px 4px 0px rgba(150, 164, 176, 0.1);
+  }
+}
