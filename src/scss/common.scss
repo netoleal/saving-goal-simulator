@@ -1,0 +1,12 @@
+@import './mixins.scss';
+
+.caption {
+  line-height: 1.25em;
+  margin: size(0);
+  color: var(--text-secondary);
+  font-size: 0.8em;
+
+  @include breakpoint(sm) {
+    font-size: 1em;
+  }
+}

@@ -1,3 +1,5 @@
+@import '../../scss/mixins.scss';
+
 .SavingGoalSimulator {
   display: flex;
   flex-direction: column;
@@ -5,28 +7,47 @@
 
   h2 {
     color: var(--brand-color);
-    font-size: 24px;
-    font-style: normal;
-    font-weight: var(--fw-regular);
-    line-height: 32px;
-    letter-spacing: -0.20000000298023224px;
     text-align: center;
     span {
       font-weight: var(--fw-bold);
     }
   }
 
-  h1 {
-    margin: size(0);
-  }
-
   .contentCard {
     display: flex;
     flex-direction: column;
+    min-width: calc(100vw - var(--card-padding) * 2);
+
+    @include breakpoint(sm) {
+      min-width: 560px;
+    }
 
     > img:first-child {
-      width: 37px;
-      height: 40px;
+      align-self: flex-start;
+    }
+
+    h1 {
+      margin: size(0);
+    }
+
+    .fieldsContainer {
+      margin-top: size(4);
+      display: flex;
+      flex-direction: column;
+      align-content: stretch;
+      > *:first-child {
+        margin-bottom: size(2);
+      }
+
+      @include breakpoint(sm) {
+        margin-top: size(5);
+        flex-direction: row;
+
+        > *:first-child {
+          margin-right: size(2);
+          margin-bottom: size(0);
+        }
+      }
     }
   }
 }
