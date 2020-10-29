@@ -27,7 +27,9 @@ $field-border: 1px solid #e1e8ed;
   .middle {
     flex-grow: 1;
     border: none;
-    padding: size(1);
+    > * {
+      padding: inherit;
+    }
   }
 }
 

@@ -14,12 +14,36 @@
   }
 
   .contentCard {
+    --width: calc(100vw - var(--card-padding) * 2);
+
     display: flex;
     flex-direction: column;
-    min-width: calc(100vw - var(--card-padding) * 2);
+
+    min-width: var(--width);
+    max-width: var(--width);
+
+    .submitButton {
+      background: var(--brand-color);
+      border: none;
+      color: white;
+
+      margin-top: size(4.5);
+      padding: size(2);
+      font-size: 1.12em;
+      font-weight: var(--fw-bold);
+      border-radius: size(10);
+      align-self: center;
+      width: 100%;
+
+      @include breakpoint(sm) {
+        margin-top: size(3.7);
+        width: 80%;
+      }
+    }
 
     @include breakpoint(sm) {
       min-width: 560px;
+      max-width: 560px;
     }
 
     > img:first-child {
@@ -32,13 +56,56 @@
 
     .fieldsContainer {
       margin-top: size(4);
+      margin-bottom: size(3.7);
       display: grid;
       grid-template-columns: 100%;
       gap: size(2);
 
       @include breakpoint(sm) {
         margin-top: size(5);
-        grid-template-columns: 50% 50%;
+        grid-template-columns: 45% auto;
+      }
+    }
+
+    .resultsContainer {
+      border: 1px solid #e1e8ed;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      border-radius: size(0.5);
+
+      > * {
+        padding: size(2.5, 3);
+
+        @include breakpoint(sm) {
+          padding: size(3, 5);
+        }
+      }
+
+      .footer {
+        background: #f4f8fa;
+      }
+
+      .monthly {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        .monthlyLabel {
+          font-weight: var(--fw-semibold);
+          @include breakpoint(sm) {
+            font-size: 1.12em;
+          }
+        }
+
+        .monthlyValue {
+          font-size: 1.6em;
+          color: var(--brand-color-light);
+          @include breakpoint(sm) {
+            font-size: 2.5em;
+          }
+        }
       }
     }
   }

@@ -5,9 +5,10 @@ export default {
   buySubtitle: 'Saving goal',
   totalAmount: 'Total amount',
   reachGoalBy: 'Reach goal by',
-  montlyAmount: 'Reach goal by',
+  monthlyAmount: 'Monthly Amount',
+  amountValue: '{value, number, ::currency/USD}',
   resultText:
-    'You’re planning {deposits, number} monthly deposits to reach your ${goal, number, ::sign-always compact-short currency/USD } goal by {targetDate, date, ::Myyyy}.',
+    'You’re planning {boldOpen}{deposits, number} monthly deposits{boldClose} to reach your {boldOpen}{goal, number, ::currency/USD}{boldClose} goal by {boldOpen}{targetDate, date, ::MMMM yyyy}{boldClose}.',
   confirm: 'Confirm',
   month: '{value, date, ::MMMM}',
   year: '{value, date, ::yyyy}',

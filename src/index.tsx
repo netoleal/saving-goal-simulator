@@ -6,7 +6,7 @@ import App from './App';
 import './index.scss';
 
 ReactDOM.render(
-  <IntlProvider messages={messages} locale="en" defaultLocale="en">
+  <IntlProvider messages={messages} locale="en-US" defaultLocale="en-US">
     <App />
   </IntlProvider>,
   document.getElementById('root')
