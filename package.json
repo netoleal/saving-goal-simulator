@@ -54,7 +54,7 @@
     "test:watch": "jest --watch",
     "lint": "eslint './src/**/*.{ts,tsx}' './spec/**/*.{ts,tsx}' --quiet",
     "dev": "parcel ./src/index.html",
-    "build": "parcel build ./src/index.html --public-url '.' && mv dist build",
+    "build": "rm -rf ./build && parcel build ./src/index.html --public-url '.' && mv ./dist ./build",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },

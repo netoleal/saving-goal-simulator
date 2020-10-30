@@ -94,6 +94,7 @@ export const DateField: React.FC<DateFieldProps> = ({
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentDate]);
 
   return (
