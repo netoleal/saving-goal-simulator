@@ -4,6 +4,7 @@ export default {
   buyTitle: 'Buy a house',
   buySubtitle: 'Saving goal',
   totalAmount: 'Total amount',
+  totalPlaceholder: '200,000',
   reachGoalBy: 'Reach goal by',
   monthlyAmount: 'Monthly Amount',
   amountValue: '{value, number, ::currency/USD}',

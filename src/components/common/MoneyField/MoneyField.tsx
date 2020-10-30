@@ -7,12 +7,14 @@ import { useMoneyFormatter } from '../../../hooks/useMoneyFormatter';
 
 export type MoneyFieldProps = {
   startValue: number;
+  placeholder?: string;
   onChange?: (value: number) => void;
 } & FieldComponentProps;
 
 export const MoneyField: React.FC<MoneyFieldProps> = ({
   label,
   startValue,
+  placeholder,
   onChange = noop
 }) => {
   const moneyFormatter = useMoneyFormatter();
@@ -44,6 +46,7 @@ export const MoneyField: React.FC<MoneyFieldProps> = ({
       <input
         type="text"
         value={currentValue}
+        placeholder={placeholder}
         className="input fieldValue"
         onChange={handleChange}
       />

@@ -18,6 +18,7 @@ export const SavingGoalSimulator: React.FC = () => {
       buyTitle,
       buySubtitle,
       totalAmount,
+      totalPlaceholder,
       reachGoalBy,
       monthlyAmount,
       confirm
@@ -58,11 +59,13 @@ export const SavingGoalSimulator: React.FC = () => {
           <MoneyField
             label={totalAmount as string}
             startValue={goal}
+            placeholder={totalPlaceholder as string}
             onChange={handleValueChange}
           />
           <DateField
             label={reachGoalBy as string}
             startDate={targetDate}
+            stepInMonths={1}
             minimumDate={new Date()}
             onChange={handleDateChange}
           />
