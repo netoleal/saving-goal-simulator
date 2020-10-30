@@ -35,6 +35,7 @@ export const MoneyField: React.FC<MoneyFieldProps> = ({
   React.useEffect(() => {
     const numericValue = parseInt(currentValue.replace(/\D/g, ''));
     onChange(numericValue);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentValue]);
 
   return (
