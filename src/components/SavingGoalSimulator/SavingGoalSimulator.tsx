@@ -9,6 +9,10 @@ import {
   useSavingGoalCalculator,
   SavingGoalCalculatorResult
 } from '../../hooks/useSavingGoalCalculator';
+import { useSelectedGoal } from '../../hooks/useSelectedGoal';
+import { useDispatch } from 'react-redux';
+import { setupGoal } from '../../store/goals/actions';
+import { useHistory } from 'react-router-dom';
 
 export const SavingGoalSimulator: React.FC = () => {
   const {
@@ -21,7 +25,8 @@ export const SavingGoalSimulator: React.FC = () => {
       totalPlaceholder,
       reachGoalBy,
       monthlyAmount,
-      confirm
+      confirm,
+      goals: goalsIntl
     },
     formatMessage
   } = useIntl();
@@ -29,11 +34,16 @@ export const SavingGoalSimulator: React.FC = () => {
     deposits: 0,
     monthlyAmount: 0
   });
-  const [goal, setGoal] = React.useState(20000);
+  const { selected, setup } = useSelectedGoal();
+  const [goal, setGoal] = React.useState(setup?.totalGoalValue ?? 20000);
   const nextMonth = new Date();
   nextMonth.setMonth(nextMonth.getMonth() + 12);
-  const [targetDate, setTargetDate] = React.useState(nextMonth);
+  const [targetDate, setTargetDate] = React.useState(
+    setup?.targetDate ?? nextMonth
+  );
   const calculateGoalResult = useSavingGoalCalculator();
+  const dispatch = useDispatch();
+  const history = useHistory();
 
   function handleDateChange(date: Date) {
     setTargetDate(date);
@@ -41,6 +51,12 @@ export const SavingGoalSimulator: React.FC = () => {
   function handleValueChange(value: number) {
     setGoal(value);
   }
+
+  function submit() {
+    dispatch(setupGoal(selected, { totalGoalValue: goal, targetDate }));
+    history.push('/');
+  }
+
   React.useEffect(() => {
     setResult(calculateGoalResult(goal, targetDate));
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -52,8 +68,8 @@ export const SavingGoalSimulator: React.FC = () => {
         <span>{appTitle2}</span>
       </h2>
       <Card className="contentCard">
-        <img src={icon} alt="Academy icon" />
-        <h1>{buyTitle}</h1>
+        <img src={selected.icon} alt={selected.title} />
+        <h1>{goalsIntl[selected.title as any]}</h1>
         <p className="caption">{buySubtitle}</p>
         <div className="fieldsContainer">
           <MoneyField
@@ -98,7 +114,9 @@ export const SavingGoalSimulator: React.FC = () => {
             }}
           />
         </div>
-        <button className="submitButton">{confirm}</button>
+        <button className="submitButton" onClick={submit}>
+          {confirm}
+        </button>
       </Card>
     </section>
   );

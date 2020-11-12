@@ -6,6 +6,7 @@ export default {
   totalAmount: 'Total amount',
   totalPlaceholder: '200,000',
   reachGoalBy: 'Reach goal by',
+  shortDate: '{value, date, ::MMMM yyyy}',
   monthlyAmount: 'Monthly Amount',
   amountValue: '{value, number, ::currency/USD}',
   resultText:

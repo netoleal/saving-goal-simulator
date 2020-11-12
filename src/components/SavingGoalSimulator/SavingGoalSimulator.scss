@@ -23,22 +23,7 @@
     max-width: var(--width);
 
     .submitButton {
-      background: var(--brand-color);
-      border: none;
-      color: white;
-
-      margin-top: size(4.5);
-      padding: size(2);
-      font-size: 1.12em;
-      font-weight: var(--fw-bold);
-      border-radius: size(10);
-      align-self: center;
-      width: 100%;
-
-      @include breakpoint(sm) {
-        margin-top: size(3.7);
-        width: 80%;
-      }
+      @include button;
     }
 
     @include breakpoint(sm) {
