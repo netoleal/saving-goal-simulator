@@ -44,15 +44,11 @@ export const DateField: React.FC<DateFieldProps> = ({
   }
 
   function handleNextClick() {
-    if (!hasNext()) return;
-
     const targetDate = new Date(currentDate.getTime());
     targetDate.setMonth(targetDate.getMonth() + stepInMonths);
     setCurrentDate(targetDate);
   }
   function handlePrevClick() {
-    if (!hasPrevious()) return;
-
     const targetDate = new Date(currentDate.getTime());
     targetDate.setMonth(targetDate.getMonth() - stepInMonths);
     setCurrentDate(targetDate);
